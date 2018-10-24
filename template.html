@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <title>Principal</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <!--     Fonts and icons     -->
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+  <!-- Material Kit CSS -->
+  <link href="assets/css/material-kit.css?v=2.0.4" rel="stylesheet" />
+  <link href="assets/css/app.css" rel="stylesheet" />
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse navbar-expand-lg bg-danger" role="navigation-demo">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-translate">
+        <h3 class="text-center">Andreia Tour | Excursões</h3>
+
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ml-auto">
+          <li class="dropdown nav-item">
+            <a href="#" class="profile-photo dropdown-toggle nav-link" data-toggle="dropdown">
+              <div class="profile-photo-small">
+                <img src="./assets/img/faces/avatar.jpg" alt="Circle Image" class="rounded-circle img-fluid">
+              </div>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right">
+              <a href="#" class="dropdown-item">Sair</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-->
+  </nav>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card card-nav-tabs card-plain">
+          <div class="card-header card-header-danger">
+            <div class="nav-tabs-navigation">
+              <div class="nav-tabs-wrapper">
+                <ul class="nav nav-tabs" data-tabs="tabs">
+                  <li class="nav-item">
+                    <a class="nav-link active" href="#onibus" data-toggle="tab">
+                      <i class="material-icons">directions_bus</i>Viajem Onibus
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#tren" data-toggle="tab">
+                      <i class="material-icons">train</i>Viajem Tren</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#aviao" data-toggle="tab">
+                      <i class="material-icons">flight</i>Viajem Avião</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#passageiros" data-toggle="tab">
+                      <i class="material-icons">people</i>Passageiros</a>
+                  </li>
+                  <li class="nav-item text-rigth">
+                    <a class="nav-link" href="#financeiro" data-toggle="tab">
+                      <i class="material-icons">assessment</i>Financeiro</a>
+                  </li>
+                  <li class="nav-item">
+                    <button class="btn btn-danger" data-toggle="modal" data-target="#modalViajem">Nova Viajem</button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-body ">
+            <div class="tab-content text-center">
+              <div class="tab-pane active" id="onibus">
+                <div class="row" id="container-onibus">
+
+                </div>
+              </div>
+              <div class="tab-pane" id="tren">
+                <p>Nehuma Viajem no Momento.</p>
+              </div>
+              <div class="tab-pane" id="aviao">
+                <div class="row" id="container-aviao">
+                  <div class="col-sm-4 col-md-3">
+                    <div class="card" style="width: 17rem;">
+                      <img class="card-img-top" src="https://images.unsplash.com/photo-1517303650219-83c8b1788c4c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bd4c162d27ea317ff8c67255e955e3c8&auto=format&fit=crop&w=2691&q=80"
+                        alt="Card image cap">
+                      <h4 class="card-title">Excursão para Porto Seguro na Bahia</h4>
+                      <h5 class="card-text"><b>Custos </b> R$ 800,00 </h5>
+                      <p class="card-text"><b>Saída </b> 15/10/2018 </p>
+                      <p class="card-text"><b>Pago até o momento R$ 800,00</b></p>
+                      <div class="align-self-center">
+                        <div class="circle-card">26/50</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="passageiros">
+                <div class="container-fluid">
+                  <div class="form-row">
+                    <div class="col-md-8">
+                      <form>
+                        <div class="form-row">
+                          <div class="form-group col-md-3 has-danger">
+                            <label for="inputCity" class="bmd-label-floating">Passageiro</label>
+                            <input type="text" class="form-control" id="inputCity">
+                          </div>
+                          <div class="form-group col-md-2  has-danger">
+                            <label for="statusPassageiro" class="bmd-label-floating">Status</label>
+                            <select id="statusPassageiro" class="form-control">
+                              <option selected>Escolha Status</option>
+                              <option>parcela em aberto</option>
+                              <option>parcelas pagos</option>
+                              <option>parcela vencida</option>
+                            </select>
+                          </div>
+                          <div class="form-group col-md-2  has-danger">
+                            <label for="statusPassageiro" class="bmd-label-floating">Viajem</label>
+                            <select id="statusPassageiro" class="form-control">
+                              <option selected>Escolha Viajem</option>
+                              <option>Excursão para Porto Seguro na Bahia</option>
+                              <option>Excursão para Porto de Galinhas no Ceará</option>
+                              <option>Excursão para Acapuco </option>
+                            </select>
+                          </div>
+                          <div>
+                            <button class="btn btn-round" type="submit" style="margin-top:3em"><i class="material-icons">search</i></button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="col-md-2">
+                      <button class="btn btn-round btn-danger" style="margin-top:3em" data-toggle="modal" data-target="#modalPassageiro">
+                        <i class="material-icons">add</i> Novo Passageiro
+                      </button>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-8">
+                      <div class="cardd">
+                        <div class="row">
+                          <div class="col-md-2  ">
+                            <div class="profile-photo-small align-middle">
+                              <img src="./assets/img/faces/avatar.jpg" alt="Circle Image" class="rounded-circle align-middle img-fluid float-left avatar-card">
+                            </div>
+                          </div>
+                          <div class="col-md-8">
+                            <h5 style="padding-top:0.5em;text-align: left;padding-bottom: 0;margin-bottom: 0">
+                              <b>Ana Paula Silva</b>
+                            </h5>
+                            <p style="text-align: left;">Excursão para Porto Seguro na Bahia</p>
+                            <hr>
+                            <p style="text-align: left;padding-top: 0;margin-top: 0;" class="text-warning">
+                              <b>Parcela em aberto</b>
+                            </p>
+                          </div>
+                          <div class="col-md-2">
+                            <div class="p2" style="padding-top:4em">
+                              <a href="historicoPagamentos.html" style="color:black"><i class="material-icons">format_list_bulleted</i></a>
+                              <a href="#" style="color:black"><i class="material-icons">delete_forever</i></a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="cardd">
+                        <div class="row">
+                          <div class="col-md-2  ">
+                            <div class="profile-photo-small align-middle">
+                              <img src="./assets/img/faces/default.png" alt="Circle Image" class="rounded-circle align-middle img-fluid float-left avatar-card">
+                            </div>
+                          </div>
+                          <div class="col-md-8">
+                            <h5 style="padding-top:0.5em;text-align: left;padding-bottom: 0;margin-bottom: 0">
+                              <b>Diego Leandro da Silva</b>
+                            </h5>
+                            <p style="text-align: left;">Excursão para Porto Seguro na Bahia</p>
+                            <hr>
+                            <p style="text-align: left;padding-top: 0;margin-top: 0;" class="text-warning">
+                              <b>Parcela em aberto</b>
+                            </p>
+                          </div>
+                          <div class="col-md-2">
+                            <div class="p2" style="padding-top:4em">
+                              <a href="historicoPagamentos.html" style="color:black"><i class="material-icons">format_list_bulleted</i></a>
+                              <a href="#" style="color:black"><i class="material-icons">delete_forever</i></a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="cardd">
+                        <div class="row">
+                          <div class="col-md-2  ">
+                            <div class="profile-photo-small align-middle">
+                              <img src="./assets/img/faces/default.png" alt="Circle Image" class="rounded-circle align-middle img-fluid float-left avatar-card">
+                            </div>
+                          </div>
+                          <div class="col-md-8">
+                            <h5 style="padding-top:0.5em;text-align: left;padding-bottom: 0;margin-bottom: 0">
+                              <b>Nayara Silva</b>
+                            </h5>
+                            <p style="text-align: left;">Excursão para Porto Seguro na Bahia</p>
+                            <hr>
+                            <p style="text-align: left;padding-top: 0;margin-top: 0;" class="text-success">
+                              <b>Parcela pagas</b>
+                            </p>
+                          </div>
+                          <div class="col-md-2">
+                            <div class="p2" style="padding-top:4em">
+                              <a href="historicoPagamentos.html" style="color:black"><i class="material-icons">format_list_bulleted</i></a>
+                              <a href="#" style="color:black"><i class="material-icons">delete_forever</i></a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="cardd">
+                        <div class="row">
+                          <div class="col-md-2  ">
+                            <div class="profile-photo-small align-middle">
+                              <img src="./assets/img/faces/default.png" alt="Circle Image" class="rounded-circle align-middle img-fluid float-left avatar-card">
+                            </div>
+                          </div>
+                          <div class="col-md-8">
+                            <h5 style="padding-top:0.5em;text-align: left;padding-bottom: 0;margin-bottom: 0">
+                              <b>Carlos Antônio José</b>
+                            </h5>
+                            <p style="text-align: left;">Excursão para Porto Seguro na Bahia</p>
+                            <hr>
+                            <p style="text-align: left;padding-top: 0;margin-top: 0;" class="text-warning">
+                              <b>Parcela em aberto</b>
+                            </p>
+                          </div>
+                          <div class="col-md-2">
+                            <div class="p2" style="padding-top:4em">
+                              <a href="historicoPagamentos.html" style="color:black"><i class="material-icons">format_list_bulleted</i></a>
+                              <a href="#" style="color:black"><i class="material-icons">delete_forever</i></a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="card-perfil">
+                        <a href="#pablo">
+                          <img src="./assets/img/faces/avatar.jpg" alt="Circle Image" class="img rounded-circle align-middle"
+                            style="height: 250px;  width: 250px;">
+                        </a>
+                        <div class="card-body">
+                          <h4 class="card-title">Ana Paula Silva</h4>
+                          <h5 class=" text-center" style="padding-left:2em">anapaula@gmail.com</h5>
+                          <p class="card-description text-left" style="padding-left:2em">
+                            <b>Telefone:</b> 34 3322-6778 | <b>WhatsApp:</b> 34 98878-0065
+                          </p>
+                          <p class="card-description text-left" style="padding-left:2em">
+                            Rua São MAteus 511 - Abadia - Uberaba
+                          </p>
+                          <p class="card-description">
+                            <b>Já viajou 5 vezes</b>
+                          </p>
+                          <a href="#pablo" class="btn btn-danger btn-round"><i class="material-icons">edit</i> Editar
+                            Passageiro</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="financeiro">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <form>
+                        <div class="form-row">
+                          <div class="form-group col-md-2  has-danger">
+                            <label for="statusPassageiro" class="bmd-label-floating">Mês</label>
+                            <select id="statusPassageiro" class="form-control">
+                              <option selected>Escolha Mês</option>
+                              <option>Outubro</option>
+                              <option>Novembro</option>
+                              <option>Dezembro</option>
+                            </select>
+                          </div>
+                          <div>
+                            <button class="btn btn-round" type="submit" style="margin-top:3em"><i class="material-icons">search</i></button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                  <!-- Tabela Financeiro-->
+                  <div class="card">
+                    <div class="card-header card-header-danger" style="margin-top:1em">
+                      <h4 class="card-title">Resultados Financeiros</h4>
+                    </div>
+                    <div class="card-body">
+                      <div class="table-responsive">
+                        <table class="table">
+                          <thead>
+                            <th>Mês</th>
+                            <th>Nome da Viajem</th>
+                            <th>Total de Custos</th>
+                            <th>Total de Receita Recebida</th>
+                            <th>Total</th>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Setembro</td>
+                              <td>Excursão para Salvador</td>
+                              <td>R$ 1.200</td>
+                              <td>R$ 4.000,00</td>
+                              <td class="text-success">R$ 2.800,00</td>
+                            </tr>
+                            <tr>
+                              <td>Outubro</td>
+                              <td>Excursão para Porto Seguro na Bahiaz</td>
+                              <td>R$ 3.000,00</td>
+                              <td>R$ 2.400,00</td>
+                              <td class="text-success">R$ 800,00</td>
+                            </tr>
+                            <tr>
+                              <td>Outubro</td>
+                              <td>Excursão para Rio Janeiro</td>
+                              <td>R$ 4.200</td>
+                              <td>R$ 4.000,00</td>
+                              <td class="text-warning">R$ -200,00</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <button class="btn btn-danger" data-toggle="modal" data-target="#modalPassageiro">
+                          <i class="material-icons">cloud_download</i> Exportar Excell
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Tela Principal -->
+
+  <!--Modal Cadastro de Viajem-->
+  <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" id="modalViajem" aria-labelledby="myLargeModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <form class="container" onsubmit="viajemController.criaViajem(event)">
+          <div class="modal-header">
+            <h5 class="modal-title">Cadastro de Viajem</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="form-group has-danger">
+            <label for="nomeViajem" class="bmd-label-floating">Nome da Viajem</label>
+            <input type="text" class="form-control" id="nomeViajem" aria-describedby="emailHelp">
+          </div>
+          <div class="row">
+            <div class="col-lg3 col-sm-4">
+              <div class="form-group has-danger">
+                <label for="statusPassageiro" class="bmd-label-floating">Tipo Viajem</label>
+                <select id="statusPassageiro" class="form-control">
+                  <option selected>Escolha Tipo</option>
+                  <option>Viajem de Onibus</option>
+                  <option>Viajem de Tren</option>
+                  <option>Viajem de Avião</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-lg-3 col-sm-4">
+              <div class="form-group has-danger">
+                <label for="valorPassagem" class="bmd-label-floating">Valor da Passajem</label>
+                <input type="text" class="form-control" id="valorPassagem">
+              </div>
+            </div>
+            <div class="col-lg-3 col-sm-4">
+              <div class="form-group has-danger">
+                <label for="qtdPassageiros" class="bmd-label-floating">Quantidade Passageiros</label>
+                <input type="number" class="form-control" id="qtdPassageiros">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-3 col-sm-4">
+              <div class="form-group has-danger">
+                <label class="label-control">Data Saída</label>
+                <input type="text" class="form-control datetimepicker" id="dataInicio" />
+              </div>
+            </div>
+            <div class="col-lg-3 col-sm-4">
+              <div class="form-group has-danger">
+                <label class="label-control">Data Chegada</label>
+                <input type="text" class="form-control datetimepicker" id="dataFinal">
+              </div>
+            </div>
+          </div>
+          <div class="form-group has-danger">
+            <label for="descricaoViajem">Descricao da Viajem</label>
+            <textarea class="form-control" id="descricaoViajem" rows="3"></textarea>
+          </div>
+          <button type="submit" class="btn btn-danger">Salvar Viajem</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!--Modal Cadastro de Viajem-->
+  <!--Modal Cadastro de Passageiro -->
+  <div class="modal fade bd-example-modal-lg" id="modalPassageiro" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <form class="container" onsubmit="viajemController.closeDialog(event)">
+          <div class="modal-header">
+            <h5 class="modal-title">Cadastro de Passageiro</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="row">
+            <div class="col-lg-6 col-sm-6">
+              <div class="form-group has-danger">
+                <label for="nomePassageiro" class="bmd-label-floating">Nome do Passageiro</label>
+                <input type="text" class="form-control" id="nomePassageiro" aria-describedby="emailHelp">
+              </div>
+            </div>
+            <div class="col-lg-6 col-sm-6">
+              <div class="form-group has-danger">
+                <label for="emailPassageiro" class="bmd-label-floating">Email</label>
+                <input type="text" class="form-control" id="emailPassageiro" aria-describedby="emailHelp">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-3 col-sm-4">
+              <div class="form-group has-danger">
+                <label for="telefonePassagem" class="bmd-label-floating">Telefone</label>
+                <input type="text" class="form-control" id="telefonePassagem">
+              </div>
+            </div>
+            <div class="col-lg-3 col-sm-4">
+              <div class="form-group has-danger">
+                <label for="whatsappPassageiros" class="bmd-label-floating">WhatsApp</label>
+                <input type="number" class="form-control" id="whatsappPassageiros">
+              </div>
+            </div>
+            <div class="col-lg-3 col-sm-4">
+              <div class="form-group has-danger">
+                <label class="label-control">Data Nascimento</label>
+                <input type="text" class="form-control datetimepicker" id="dataNascimentoPassageiro" />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-3 col-sm-4">
+              <div class="form-group has-danger">
+                <label for="enderecoPassageiro" class="bmd-label-floating">Endereço</label>
+                <input type="text" class="form-control" id="enderecoPassageiro" aria-describedby="emailHelp">
+              </div>
+            </div>
+            <div class="col-lg-2 col-sm-2">
+              <div class="form-group has-danger">
+                <label for="numeroEnderecoPassageiro" class="bmd-label-floating">Nº</label>
+                <input type="number" class="form-control" id="numeroEnderecoPassageiro" aria-describedby="emailHelp">
+              </div>
+            </div>
+            <div class="col-lg-3 col-sm-4">
+              <div class="form-group has-danger">
+                <label for="cidadePassageiro" class="bmd-label-floating">Cidade</label>
+                <input type="text" class="form-control" id="cidadePassageiro" aria-describedby="emailHelp">
+              </div>
+            </div>
+            <div class="col-lg-3 col-sm-4">
+              <div class="form-group has-danger">
+                <label for="bairroPassageiro" class="bmd-label-floating">Baiiro</label>
+                <input type="text" class="form-control" id="bairroPassageiro" aria-describedby="emailHelp">
+              </div>
+            </div>
+          </div>
+          <div class="form-group has-danger">
+            <label for="observacaoViajem">Observacao</label>
+            <textarea class="form-control" id="observacaoViajem" rows="3"></textarea>
+          </div>
+          <button type="submit" class="btn btn-danger">Salvar Passageiro</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!--Modal Cadastro de Passageiro-->
+
+  <!--   Core JS Files   -->
+  <script src="./assets/js/core/jquery.min.js" type="text/javascript"></script>
+  <script src="./assets/js/core/popper.min.js" type="text/javascript"></script>
+  <script src="./assets/js/core/bootstrap-material-design.min.js" type="text/javascript"></script>
+  <script src="./assets/js/plugins/moment.min.js"></script>
+  <!--	Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
+  <script src="./assets/js/plugins/bootstrap-datetimepicker.js" type="text/javascript"></script>
+  <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+  <script src="./assets/js/plugins/nouislider.min.js" type="text/javascript"></script>
+  <!--	Plugin for Sharrre btn -->
+  <script src="./assets/js/plugins/jquery.sharrre.js" type="text/javascript"></script>
+  <!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
+  <script src="./assets/js/material-kit.js?v=2.0.4" type="text/javascript"></script>
+
+  <!--   Codigo da Aplicacao   -->
+  <script src="./app/model/Viajem.js" type="text/javascript"></script>
+  <script src="./app/controller/ViajemController.js" type="text/javascript"></script>
+  <script src="./app/view/ViajemView.js" type="text/javascript"></script>
+  <script src="./app/model/ListaViajem.js" type="text/javascript"></script>
+  <script>
+    let viajemController = new ViajemController();
+  </script>
+  <script>
+    $(document).ready(function () {
+      //init DateTimePickers
+      materialKit.initFormExtendedDatetimepickers();
+
+      // Sliders Init
+      materialKit.initSliders();
+    });
+
+
+    function scrollToDownload() {
+      if ($('.section-download').length != 0) {
+        $("html, body").animate({
+          scrollTop: $('.section-download').offset().top
+        }, 1000);
+      }
+    }
+
+
+    $(document).ready(function () {
+
+      $('#facebook').sharrre({
+        share: {
+          facebook: true
+        },
+        enableHover: false,
+        enableTracking: false,
+        enableCounter: false,
+        click: function (api, options) {
+          api.simulateClick();
+          api.openPopup('facebook');
+        },
+        template: '<i class="fab fa-facebook-f"></i> Facebook',
+        url: 'https://demos.creative-tim.com/material-kit/index.html'
+      });
+
+      $('#googlePlus').sharrre({
+        share: {
+          googlePlus: true
+        },
+        enableCounter: false,
+        enableHover: false,
+        enableTracking: true,
+        click: function (api, options) {
+          api.simulateClick();
+          api.openPopup('googlePlus');
+        },
+        template: '<i class="fab fa-google-plus"></i> Google',
+        url: 'https://demos.creative-tim.com/material-kit/index.html'
+      });
+
+      $('#twitter').sharrre({
+        share: {
+          twitter: true
+        },
+        enableHover: false,
+        enableTracking: false,
+        enableCounter: false,
+        buttons: {
+          twitter: {
+            via: 'CreativeTim'
+          }
+        },
+        click: function (api, options) {
+          api.simulateClick();
+          api.openPopup('twitter');
+        },
+        template: '<i class="fab fa-twitter"></i> Twitter',
+        url: 'https://demos.creative-tim.com/material-kit/index.html'
+      });
+
+    });
+  </script>
+</body>
+
+</html>
