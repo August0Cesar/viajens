@@ -19,9 +19,7 @@
   <nav class="navbar navbar-inverse navbar-expand-lg bg-danger" role="navigation-demo">
     <div class="container">
       <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-translate">
-        <h3 class="text-center">Andreia Tour | Excursões</h3>
-
+      <div class="navbar-translate" id="nomeEmpresa">
       </div>
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse">
@@ -50,20 +48,20 @@
             <div class="nav-tabs-navigation">
               <div class="nav-tabs-wrapper">
                 <ul class="nav nav-tabs" data-tabs="tabs">
-                  <li class="nav-item">
-                    <a class="nav-link active" href="#onibus" data-toggle="tab">
+                  <li class="nav-item" onclick="viajemController.buscaViajens('onibus')">
+                    <a class="nav-link active" href="#viajens" data-toggle="tab">
                       <i class="material-icons">directions_bus</i>Viajem Onibus
                     </a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#tren" data-toggle="tab">
+                  <li class="nav-item" onclick="viajemController.buscaViajens('tren')">
+                    <a class="nav-link" href="#viajens" data-toggle="tab">
                       <i class="material-icons">train</i>Viajem Tren</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#aviao" data-toggle="tab">
+                  <li class="nav-item" onclick="viajemController.buscaViajens('aviao')">
+                    <a class="nav-link" href="#viajens" data-toggle="tab">
                       <i class="material-icons">flight</i>Viajem Avião</a>
                   </li>
-                  <li class="nav-item">
+                  <li class="nav-item" onclick="viajemController.buscaPassageiros()">
                     <a class="nav-link" href="#passageiros" data-toggle="tab">
                       <i class="material-icons">people</i>Passageiros</a>
                   </li>
@@ -80,31 +78,11 @@
           </div>
           <div class="card-body ">
             <div class="tab-content text-center">
-              <div class="tab-pane active" id="onibus">
-                <div class="row" id="container-onibus">
+              <div class="tab-pane active" id="viajens">
+                <div class="row" id="container-viajens">
+                </div>
+              </div>
 
-                </div>
-              </div>
-              <div class="tab-pane" id="tren">
-                <p>Nehuma Viajem no Momento.</p>
-              </div>
-              <div class="tab-pane" id="aviao">
-                <div class="row" id="container-aviao">
-                  <div class="col-sm-4 col-md-3">
-                    <div class="card" style="width: 17rem;">
-                      <img class="card-img-top" src="https://images.unsplash.com/photo-1517303650219-83c8b1788c4c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bd4c162d27ea317ff8c67255e955e3c8&auto=format&fit=crop&w=2691&q=80"
-                        alt="Card image cap">
-                      <h4 class="card-title">Excursão para Porto Seguro na Bahia</h4>
-                      <h5 class="card-text"><b>Custos </b> R$ 800,00 </h5>
-                      <p class="card-text"><b>Saída </b> 15/10/2018 </p>
-                      <p class="card-text"><b>Pago até o momento R$ 800,00</b></p>
-                      <div class="align-self-center">
-                        <div class="circle-card">26/50</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
               <div class="tab-pane" id="passageiros">
                 <div class="container-fluid">
                   <div class="form-row">
@@ -145,9 +123,9 @@
                       </button>
                     </div>
                   </div>
-                  <div class="row">
+                  <div class="row" id="painel-passageiros">
                     <div class="col-md-8">
-                      <div class="cardd">
+                      <!-- <div class="cardd">
                         <div class="row">
                           <div class="col-md-2  ">
                             <div class="profile-photo-small align-middle">
@@ -246,10 +224,10 @@
                             </div>
                           </div>
                         </div>
-                      </div>
+                      </div> -->
                     </div>
-                    <div class="col-md-4">
-                      <div class="card-perfil">
+                    <div class="col-md-4" id="painel-perfil">
+                      <!-- <div class="card-perfil">
                         <a href="#pablo">
                           <img src="./assets/img/faces/avatar.jpg" alt="Circle Image" class="img rounded-circle align-middle"
                             style="height: 250px;  width: 250px;">
@@ -269,7 +247,7 @@
                           <a href="#pablo" class="btn btn-danger btn-round"><i class="material-icons">edit</i> Editar
                             Passageiro</a>
                         </div>
-                      </div>
+                      </div> -->
                     </div>
                   </div>
                 </div>
@@ -356,7 +334,7 @@
     aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
-        <form class="container" onsubmit="viajemController.criaViajem(event)">
+        <form class="container" onsubmit="viajemController.cadastraViajem(event)">
           <div class="modal-header">
             <h5 class="modal-title">Cadastro de Viajem</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -370,12 +348,8 @@
           <div class="row">
             <div class="col-lg3 col-sm-4">
               <div class="form-group has-danger">
-                <label for="statusPassageiro" class="bmd-label-floating">Tipo Viajem</label>
-                <select id="statusPassageiro" class="form-control">
-                  <option selected>Escolha Tipo</option>
-                  <option>Viajem de Onibus</option>
-                  <option>Viajem de Tren</option>
-                  <option>Viajem de Avião</option>
+                <label for="tipoViajem" class="bmd-label-floating">Tipo Viajem</label>
+                <select id="tipoViajem" class="form-control">
                 </select>
               </div>
             </div>
@@ -396,7 +370,7 @@
             <div class="col-lg-3 col-sm-4">
               <div class="form-group has-danger">
                 <label class="label-control">Data Saída</label>
-                <input type="text" class="form-control datetimepicker" id="dataInicio" />
+                <input type="text" class="form-control datetimepicker" data-format="dd/MM/yyyy" id="dataInicio" />
               </div>
             </div>
             <div class="col-lg-3 col-sm-4">
@@ -421,7 +395,7 @@
     aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
-        <form class="container" onsubmit="viajemController.closeDialog(event)">
+        <form class="container" onsubmit="viajemController.cadastroPassageiro(event)" name="formPassageiro">
           <div class="modal-header">
             <h5 class="modal-title">Cadastro de Passageiro</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -429,70 +403,95 @@
             </button>
           </div>
           <div class="row">
-            <div class="col-lg-6 col-sm-6">
+            <div class="col-lg3 col-sm-4">
               <div class="form-group has-danger">
-                <label for="nomePassageiro" class="bmd-label-floating">Nome do Passageiro</label>
-                <input type="text" class="form-control" id="nomePassageiro" aria-describedby="emailHelp">
+                <label for="viajemPassageiro" class="bmd-label-floating">Viajem</label>
+                <select id="viajemPassageiro" class="form-control">
+                </select>
               </div>
             </div>
-            <div class="col-lg-6 col-sm-6">
-              <div class="form-group has-danger">
-                <label for="emailPassageiro" class="bmd-label-floating">Email</label>
-                <input type="text" class="form-control" id="emailPassageiro" aria-describedby="emailHelp">
+            <div class="row">
+              <div class="col-lg-6 col-sm-6">
+                <div class="form-group has-danger">
+                  <label for="nomePassageiro" class="bmd-label-floating">Nome do Passageiro</label>
+                  <input type="text" class="form-control" id="nomePassageiro" aria-describedby="emailHelp">
+                </div>
+              </div>
+              <div class="col-lg-6 col-sm-6">
+                <div class="form-group has-danger">
+                  <label for="emailPassageiro" class="bmd-label-floating">Email</label>
+                  <input type="text" class="form-control" id="emailPassageiro" aria-describedby="emailHelp">
+                </div>
               </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-3 col-sm-4">
-              <div class="form-group has-danger">
-                <label for="telefonePassagem" class="bmd-label-floating">Telefone</label>
-                <input type="text" class="form-control" id="telefonePassagem">
+            <div class="row">
+              <div class="col-lg-3 col-sm-4">
+                <div class="form-group has-danger">
+                  <label for="telefonePassageiro" class="bmd-label-floating">Telefone</label>
+                  <input type="text" name="tel" onblur="viajemController.validateTelefone(formPassageiro.tel)"
+                    onkeypress="viajemController.MascaraTelefone(event)" class="form-control" id="telefonePassageiro">
+                </div>
+              </div>
+              <div class="col-lg-3 col-sm-4">
+                <div class="form-group has-danger">
+                  <label for="whatsappPassageiro" class="bmd-label-floating">WhatsApp</label>
+                  <input type="text" class="form-control" id="whatsappPassageiro">
+                </div>
+              </div>
+              <div class="col-lg-3 col-sm-4">
+                <div class="form-group has-danger">
+                  <label class="label-control">Data Nascimento</label>
+                  <input type="text" class="form-control datetimepicker" id="dataNascimentoPassageiro" />
+                </div>
               </div>
             </div>
-            <div class="col-lg-3 col-sm-4">
-              <div class="form-group has-danger">
-                <label for="whatsappPassageiros" class="bmd-label-floating">WhatsApp</label>
-                <input type="number" class="form-control" id="whatsappPassageiros">
+            <div class="row">
+              <div class="col-lg-3 col-sm-4">
+                <div class="form-group has-danger">
+                  <label for="ruaPassageiro" class="bmd-label-floating">Endereço</label>
+                  <input type="text" class="form-control" id="ruaPassageiro" aria-describedby="emailHelp">
+                </div>
+              </div>
+              <div class="col-lg-2 col-sm-2">
+                <div class="form-group has-danger">
+                  <label for="numeroRuaPassageiro" class="bmd-label-floating">Nº</label>
+                  <input type="number" class="form-control" id="numeroRuaPassageiro" aria-describedby="emailHelp">
+                </div>
+              </div>
+              <div class="col-lg-3 col-sm-4">
+                <div class="form-group has-danger">
+                  <label for="cidadePassageiro" class="bmd-label-floating">Cidade</label>
+                  <input type="text" class="form-control" id="cidadePassageiro" aria-describedby="emailHelp">
+                </div>
+              </div>
+              <div class="col-lg-3 col-sm-4">
+                <div class="form-group has-danger">
+                  <label for="bairroPassageiro" class="bmd-label-floating">Bairro</label>
+                  <input type="text" class="form-control" id="bairroPassageiro" aria-describedby="emailHelp">
+                </div>
+              </div>
+              <div class="col-lg-3 col-sm-4">
+                <div class="form-group has-danger">
+                  <label for="estadoPassageiro" class="bmd-label-floating">Estado</label>
+                  <input type="text" class="form-control" id="estadoPassageiro" aria-describedby="emailHelp">
+                </div>
               </div>
             </div>
-            <div class="col-lg-3 col-sm-4">
-              <div class="form-group has-danger">
-                <label class="label-control">Data Nascimento</label>
-                <input type="text" class="form-control datetimepicker" id="dataNascimentoPassageiro" />
+            <div class="row">
+              <div class="col-lg-3 col- sm-4">
+                <div class="form-group has-danger">
+                  <label for="cpfPassageiro">Cpf</label>
+                  <input type="text" class="form-control" id="cpfPassageiro" aria-describedby="emailHelp">
+                </div>
+              </div>
+              <div class="col-lg-3 col- sm-4">
+                <div class="form-group has-danger">
+                  <label for="rgPassageiro">RG</label>
+                  <input type="text" class="form-control" id="rgPassageiro" aria-describedby="emailHelp">
+                </div>
               </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-3 col-sm-4">
-              <div class="form-group has-danger">
-                <label for="enderecoPassageiro" class="bmd-label-floating">Endereço</label>
-                <input type="text" class="form-control" id="enderecoPassageiro" aria-describedby="emailHelp">
-              </div>
-            </div>
-            <div class="col-lg-2 col-sm-2">
-              <div class="form-group has-danger">
-                <label for="numeroEnderecoPassageiro" class="bmd-label-floating">Nº</label>
-                <input type="number" class="form-control" id="numeroEnderecoPassageiro" aria-describedby="emailHelp">
-              </div>
-            </div>
-            <div class="col-lg-3 col-sm-4">
-              <div class="form-group has-danger">
-                <label for="cidadePassageiro" class="bmd-label-floating">Cidade</label>
-                <input type="text" class="form-control" id="cidadePassageiro" aria-describedby="emailHelp">
-              </div>
-            </div>
-            <div class="col-lg-3 col-sm-4">
-              <div class="form-group has-danger">
-                <label for="bairroPassageiro" class="bmd-label-floating">Baiiro</label>
-                <input type="text" class="form-control" id="bairroPassageiro" aria-describedby="emailHelp">
-              </div>
-            </div>
-          </div>
-          <div class="form-group has-danger">
-            <label for="observacaoViajem">Observacao</label>
-            <textarea class="form-control" id="observacaoViajem" rows="3"></textarea>
-          </div>
-          <button type="submit" class="btn btn-danger">Salvar Passageiro</button>
+            <button type="submit" class="btn btn-danger">Salvar Passageiro</button>
         </form>
       </div>
     </div>
@@ -515,9 +514,15 @@
 
   <!--   Codigo da Aplicacao   -->
   <script src="./app/model/Viajem.js" type="text/javascript"></script>
+  <script src="./app/model/Passageiro.js" type="text/javascript"></script>
   <script src="./app/controller/ViajemController.js" type="text/javascript"></script>
+  <script src="./app/service/ViajemService.js" type="text/javascript"></script>
+  <script src="./app/service/PassageiroService.js" type="text/javascript"></script>
+  <script src="./app/service/HttpService.js" type="text/javascript"></script>
   <script src="./app/view/ViajemView.js" type="text/javascript"></script>
   <script src="./app/model/ListaViajem.js" type="text/javascript"></script>
+  <script src="./app/utils/DateHelper.js" type="text/javascript"></script>
+  <script src="./app/utils/MascUtils.js" type="text/javascript"></script>
   <script>
     let viajemController = new ViajemController();
   </script>

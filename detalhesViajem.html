@@ -48,222 +48,155 @@
         </div>
         <!-- /.container-->
     </nav>
-    <!--Detalhes da Viajem -->
     <div class="content">
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card" style="width: 25rem;">
-                        <img class="card-img-top" src="https://images.unsplash.com/photo-1517303650219-83c8b1788c4c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bd4c162d27ea317ff8c67255e955e3c8&auto=format&fit=crop&w=2691&q=80"
-                            alt="Card image cap">
-                        <h4 class="card-title card-principal text-center">Excursão para Porto Seguro na Bahia</h4>
-                        <h5 class="card-text card-principal"><b>Valor da Passagem </b> R$ 350,00 </h5>
-                        <h5 class="card-text card-principal"><b>Custos </b> R$ 735,00 </h5>
-                        <p class="card-text card-principal"><b>Saída </b> 15/10/2018 </p>
-                        <p class="card-text card-principal"><b>Pago até o momento R$ 400,00</b></p>
-                        <div class="align-self-center">
-                            <div class="circle-card">2/45</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-8">
-                    <div class="card card-nav-tabs">
-                        <div class="card-header card-header-danger">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <p><b>Data de Saída: </b>10/09/2018 18:30</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <p><b>Data de Chegada: </b>20/09/2018 16:30</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <h4 class="card-title">Descricao da Viajem</h4>
-                            <p class="card-text">Jantar, 2 quartos e sauna.</p>
-                        </div>
-                    </div>
-                    <!-- <br> -->
-                    <div class="card">
-                        <div class="card-header card-header-danger" style="margin-top:1em">
-                            <h4 class="card-title ">Custos Fixos da Viajem</h4>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table">
-                                    <thead>
-                                        <th>Descrição do Custo</th>
-                                        <th>Valor</th>
-                                        <th>Ação</th>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Passagens</td>
-                                            <td>R$ 650,00</td>
-                                            <td>
-                                                <a href="#"><i class="material-icons" style="color:black">edit</i></a>
-                                                <a href="#"><i class="material-icons" style="color:black">delete_forever</i></a>
-                                            </td>
+            <div class="row" id="container">
 
-                                        </tr>
-                                        <tr>
-                                            <td>Lanche no onibus</td>
-                                            <td>R$ 85,00</td>
-                                            <td>
-                                                <a href="#"><i class="material-icons" style="color:black">edit</i></a>
-                                                <a href="#"><i class="material-icons" style="color:black">delete_forever</i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><b>Total</b></td>
-                                            <td><b>R$ 735,00</b></td>
-                                            <td></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <button class="btn btn-danger">Novo Custo</button>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Tabela de Passageiros-->
-                    <div class="card">
-                        <div class="card-header card-header-danger" style="margin-top:1em">
-                            <h4 class="card-title">Passageiros</h4>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table">
-                                    <thead>
-                                        <th>Nome Passageiro</th>
-                                        <th>Parcelas Pagas</th>
-                                        <th>Quantidade de Parcelas</th>
-                                        <th>Valor Pago</th>
-                                        <th>Ação</th>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Maria Aparecida da Paz</td>
-                                            <td>2</td>
-                                            <td>5</td>
-                                            <td>R$ 300,00</td>
-                                            <td>
-                                                <a href="historicoPagamentos.html" style="color:black"><i class="material-icons">format_list_bulleted</i></a>
-                                                <a href="#"><i class="material-icons" style="color:black">delete_forever</i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>João Pedro</td>
-                                            <td>1</td>
-                                            <td>5</td>
-                                            <td>R$ 100,00</td>
-                                            <td>
-                                                <a href="historicoPagamentos.html" style="color:black"><i class="material-icons">format_list_bulleted</i></a>
-                                                <a href="#"><i class="material-icons" style="color:black">delete_forever</i></a>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <button class="btn btn-danger" data-toggle="modal" data-target="#modalPassageiro">Novo Passageiro</button>
-                                <button class="btn btn-danger">Gera lista de Passageiros</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
 
     <!--Detalhes da Viajem-->
-    <!--Modal Cadastro de Passageiro -->
-  <div class="modal fade bd-example-modal-lg" id="modalPassageiro" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <form class="container" onsubmit="viajemController.criaViajem(event)">
-        <div class="modal-header">
-          <h5 class="modal-title">Cadastro de Passageiro</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+    <!--Modal Cadastro de Custo -->
+    <div class="modal fade bd-example-modal-lg" id="modalCusto" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <form class="container" onsubmit="detalhesViajemController.cadastroCusto(event)" name="formPassageiro">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Cadastro de Custo</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="form-group has-danger">
+                                <label for="descricaoCusto" class="bmd-label-floating">Custo</label>
+                                <input type="text" class="form-control" id="descricaoCusto">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="form-group has-danger">
+                                <label for="valorCusto" class="bmd-label-floating">Valor</label>
+                                <input type="text" class="form-control" id="valorCusto">
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-danger">Salvar Custo</button>
+                </form>
+            </div>
         </div>
-        <div class="row">
-          <div class="col-lg-6 col-sm-6">
-            <div class="form-group has-danger">
-              <label for="nomePassageiro" class="bmd-label-floating">Nome do Passageiro</label>
-              <input type="text" class="form-control" id="nomePassageiro" aria-describedby="emailHelp">
-            </div>
-          </div>
-          <div class="col-lg-6 col-sm-6">
-            <div class="form-group has-danger">
-              <label for="emailPassageiro" class="bmd-label-floating">Email</label>
-              <input type="text" class="form-control" id="emailPassageiro" aria-describedby="emailHelp">
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-3 col-sm-4">
-            <div class="form-group has-danger">
-              <label for="telefonePassagem" class="bmd-label-floating">Telefone</label>
-              <input type="text" class="form-control" id="telefonePassagem">
-            </div>
-          </div>
-          <div class="col-lg-3 col-sm-4">
-            <div class="form-group has-danger">
-              <label for="whatsappPassageiros" class="bmd-label-floating">WhatsApp</label>
-              <input type="number" class="form-control" id="whatsappPassageiros">
-            </div>
-          </div>
-          <div class="col-lg-3 col-sm-4">
-            <div class="form-group has-danger">
-              <label class="label-control">Data Nascimento</label>
-              <input type="text" class="form-control datetimepicker" id="dataNascimentoPassageiro" />
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-3 col-sm-4">
-            <div class="form-group has-danger">
-              <label for="enderecoPassageiro" class="bmd-label-floating">Endereço</label>
-              <input type="text" class="form-control" id="enderecoPassageiro" aria-describedby="emailHelp">
-            </div>
-          </div>
-          <div class="col-lg-2 col-sm-2">
-            <div class="form-group has-danger">
-              <label for="numeroEnderecoPassageiro" class="bmd-label-floating">Nº</label>
-              <input type="number" class="form-control" id="numeroEnderecoPassageiro" aria-describedby="emailHelp">
-            </div>
-          </div>
-          <div class="col-lg-3 col-sm-4">
-            <div class="form-group has-danger">
-              <label for="cidadePassageiro" class="bmd-label-floating">Cidade</label>
-              <input type="text" class="form-control" id="cidadePassageiro" aria-describedby="emailHelp">
-            </div>
-          </div>
-          <div class="col-lg-3 col-sm-4">
-            <div class="form-group has-danger">
-              <label for="bairroPassageiro" class="bmd-label-floating">Baiiro</label>
-              <input type="text" class="form-control" id="bairroPassageiro" aria-describedby="emailHelp">
-            </div>
-          </div>
-        </div>
-        <div class="form-group has-danger">
-          <label for="observacaoViajem">Observacao</label>
-          <textarea class="form-control" id="observacaoViajem" rows="3"></textarea>
-        </div>
-        <button type="submit" class="btn btn-danger">Salvar Passageiro</button>
-      </form>
     </div>
-  </div>
-</div>
-<!--Modal Cadastro de Passageiro-->
+    <!--Modal Cadastro de Custo-->
+    <!--Modal Cadastro de Passageiro -->
+    <div class="modal fade bd-example-modal-lg" id="modalPassageiro" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <form class="container" onsubmit="detalhesViajemController.cadastroPassageiro(event)" name="formPassageiro">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Cadastro de Passageiro</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg3 col-sm-4">
+                            <div class="form-group has-danger">
+                                <label for="viajemPassageiro" class="bmd-label-floating">Viajem</label>
+                                <select id="viajemPassageiro" class="form-control">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6 col-sm-6">
+                                <div class="form-group has-danger">
+                                    <label for="nomePassageiro" class="bmd-label-floating">Nome do Passageiro</label>
+                                    <input type="text" class="form-control" id="nomePassageiro" aria-describedby="emailHelp">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-6">
+                                <div class="form-group has-danger">
+                                    <label for="emailPassageiro" class="bmd-label-floating">Email</label>
+                                    <input type="text" class="form-control" id="emailPassageiro" aria-describedby="emailHelp">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3 col-sm-4">
+                                <div class="form-group has-danger">
+                                    <label for="telefonePassageiro" class="bmd-label-floating">Telefone</label>
+                                    <input type="text" name="tel" class="form-control" id="telefonePassageiro">
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-sm-4">
+                                <div class="form-group has-danger">
+                                    <label for="whatsappPassageiro" class="bmd-label-floating">WhatsApp</label>
+                                    <input type="text" class="form-control" id="whatsappPassageiro">
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-sm-4">
+                                <div class="form-group has-danger">
+                                    <label class="label-control">Data Nascimento</label>
+                                    <input type="text" class="form-control datetimepicker" id="dataNascimentoPassageiro" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3 col-sm-4">
+                                <div class="form-group has-danger">
+                                    <label for="ruaPassageiro" class="bmd-label-floating">Endereço</label>
+                                    <input type="text" class="form-control" id="ruaPassageiro" aria-describedby="emailHelp">
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-sm-2">
+                                <div class="form-group has-danger">
+                                    <label for="numeroRuaPassageiro" class="bmd-label-floating">Nº</label>
+                                    <input type="number" class="form-control" id="numeroRuaPassageiro" aria-describedby="emailHelp">
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-sm-4">
+                                <div class="form-group has-danger">
+                                    <label for="cidadePassageiro" class="bmd-label-floating">Cidade</label>
+                                    <input type="text" class="form-control" id="cidadePassageiro" aria-describedby="emailHelp">
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-sm-4">
+                                <div class="form-group has-danger">
+                                    <label for="bairroPassageiro" class="bmd-label-floating">Bairro</label>
+                                    <input type="text" class="form-control" id="bairroPassageiro" aria-describedby="emailHelp">
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-sm-4">
+                                <div class="form-group has-danger">
+                                    <label for="estadoPassageiro" class="bmd-label-floating">Estado</label>
+                                    <input type="text" class="form-control" id="estadoPassageiro" aria-describedby="emailHelp">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3 col- sm-4">
+                                <div class="form-group has-danger">
+                                    <label for="cpfPassageiro">Cpf</label>
+                                    <input type="text" class="form-control" id="cpfPassageiro" aria-describedby="emailHelp">
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col- sm-4">
+                                <div class="form-group has-danger">
+                                    <label for="rgPassageiro">RG</label>
+                                    <input type="text" class="form-control" id="rgPassageiro" aria-describedby="emailHelp">
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-danger">Salvar Passageiro</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--Modal Cadastro de Passageiro-->
+
+
     <!--   Core JS Files   -->
     <script src="./assets/js/core/jquery.min.js" type="text/javascript"></script>
     <script src="./assets/js/core/popper.min.js" type="text/javascript"></script>
@@ -277,13 +210,18 @@
     <script src="./assets/js/plugins/jquery.sharrre.js" type="text/javascript"></script>
     <!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
     <script src="./assets/js/material-kit.js?v=2.0.4" type="text/javascript"></script>
+
     <!--   Codigo da Aplicacao   -->
-    <script src="./app/model/Viajem.js" type="text/javascript"></script>
-    <script src="./app/controller/ViajemController.js" type="text/javascript"></script>
-    <script src="./app/view/ViajemView.js" type="text/javascript"></script>
-    <script src="./app/model/ListaViajem.js" type="text/javascript"></script>
+    <script src="./app/controller/DetalhesViajemController.js" type="text/javascript"></script>
+    <script src="./app/view/DetalhesViajemView.js" type="text/javascript"></script>
+    <script src="./app/service/HttpService.js" type="text/javascript"></script>
+    <script src="./app/service/DetalhesViajemService.js" type="text/javascript"></script>
+    <script src="./app/service/PassageiroService.js" type="text/javascript"></script>
+    <script src="./app/model/Passageiro.js" type="text/javascript"></script>
+    <script src="./app/model/Custo.js" type="text/javascript"></script>
+    <script src="./app/utils/DateHelper.js" type="text/javascript"></script>
     <script>
-        let viajemController = new ViajemController();
+        let detalhesViajemController = new DetalhesViajemController();
     </script>
     <script>
         $(document).ready(function () {

@@ -17,7 +17,7 @@
 
 var big_image;
 
-$(document).ready(function() {
+$(document).ready(function () {
   BrowserDetect.init();
 
   // Init Material scripts for buttons ripples, inputs animations etc, more info on the next link https://github.com/FezVrasta/bootstrap-material-design#materialjs
@@ -53,26 +53,26 @@ $(document).ready(function() {
 
 });
 
-$(document).on('click', '.navbar-toggler', function() {
+$(document).on('click', '.navbar-toggler', function () {
   $toggle = $(this);
 
   if (materialKit.misc.navbar_menu_visible == 1) {
     $('html').removeClass('nav-open');
     materialKit.misc.navbar_menu_visible = 0;
     $('#bodyClick').remove();
-    setTimeout(function() {
+    setTimeout(function () {
       $toggle.removeClass('toggled');
     }, 550);
 
     $('html').removeClass('nav-open-absolute');
   } else {
-    setTimeout(function() {
+    setTimeout(function () {
       $toggle.addClass('toggled');
     }, 580);
 
 
     div = '<div id="bodyClick"></div>';
-    $(div).appendTo("body").click(function() {
+    $(div).appendTo("body").click(function () {
       $('html').removeClass('nav-open');
 
       if ($('nav').hasClass('navbar-absolute')) {
@@ -80,7 +80,7 @@ $(document).on('click', '.navbar-toggler', function() {
       }
       materialKit.misc.navbar_menu_visible = 0;
       $('#bodyClick').remove();
-      setTimeout(function() {
+      setTimeout(function () {
         $toggle.removeClass('toggled');
       }, 550);
     });
@@ -104,8 +104,9 @@ materialKit = {
     isWindow: document.documentMode || /Edge/.test(navigator.userAgent)
   },
 
-  initFormExtendedDatetimepickers: function() {
+  initFormExtendedDatetimepickers: function () {
     $('.datetimepicker').datetimepicker({
+      format: 'DD/MM/YYYY',
       icons: {
         time: "fa fa-clock-o",
         date: "fa fa-calendar",
@@ -120,7 +121,7 @@ materialKit = {
     });
   },
 
-  initSliders: function() {
+  initSliders: function () {
     // Sliders for demo purpose
     var slider = document.getElementById('sliderRegular');
 
@@ -145,7 +146,7 @@ materialKit = {
     });
   },
 
-  checkScrollForParallax: function() {
+  checkScrollForParallax: function () {
     oVal = ($(window).scrollTop() / 3);
     big_image.css({
       'transform': 'translate3d(0,' + oVal + 'px,0)',
@@ -155,7 +156,7 @@ materialKit = {
     });
   },
 
-  checkScrollForTransparentNavbar: debounce(function() {
+  checkScrollForTransparentNavbar: debounce(function () {
     if ($(document).scrollTop() > scroll_distance) {
       if (materialKit.misc.transparent) {
         materialKit.misc.transparent = false;
@@ -177,11 +178,11 @@ materialKit = {
 
 function debounce(func, wait, immediate) {
   var timeout;
-  return function() {
+  return function () {
     var context = this,
       args = arguments;
     clearTimeout(timeout);
-    timeout = setTimeout(function() {
+    timeout = setTimeout(function () {
       timeout = null;
       if (!immediate) func.apply(context, args);
     }, wait);
@@ -190,11 +191,11 @@ function debounce(func, wait, immediate) {
 };
 
 var BrowserDetect = {
-  init: function() {
+  init: function () {
     this.browser = this.searchString(this.dataBrowser) || "Other";
     this.version = this.searchVersion(navigator.userAgent) || this.searchVersion(navigator.appVersion) || "Unknown";
   },
-  searchString: function(data) {
+  searchString: function (data) {
     for (var i = 0; i < data.length; i++) {
       var dataString = data[i].string;
       this.versionSearchString = data[i].subString;
@@ -204,7 +205,7 @@ var BrowserDetect = {
       }
     }
   },
-  searchVersion: function(dataString) {
+  searchVersion: function (dataString) {
     var index = dataString.indexOf(this.versionSearchString);
     if (index === -1) {
       return;
@@ -219,35 +220,35 @@ var BrowserDetect = {
   },
 
   dataBrowser: [{
-      string: navigator.userAgent,
-      subString: "Chrome",
-      identity: "Chrome"
-    },
-    {
-      string: navigator.userAgent,
-      subString: "MSIE",
-      identity: "Explorer"
-    },
-    {
-      string: navigator.userAgent,
-      subString: "Trident",
-      identity: "Explorer"
-    },
-    {
-      string: navigator.userAgent,
-      subString: "Firefox",
-      identity: "Firefox"
-    },
-    {
-      string: navigator.userAgent,
-      subString: "Safari",
-      identity: "Safari"
-    },
-    {
-      string: navigator.userAgent,
-      subString: "Opera",
-      identity: "Opera"
-    }
+    string: navigator.userAgent,
+    subString: "Chrome",
+    identity: "Chrome"
+  },
+  {
+    string: navigator.userAgent,
+    subString: "MSIE",
+    identity: "Explorer"
+  },
+  {
+    string: navigator.userAgent,
+    subString: "Trident",
+    identity: "Explorer"
+  },
+  {
+    string: navigator.userAgent,
+    subString: "Firefox",
+    identity: "Firefox"
+  },
+  {
+    string: navigator.userAgent,
+    subString: "Safari",
+    identity: "Safari"
+  },
+  {
+    string: navigator.userAgent,
+    subString: "Opera",
+    identity: "Opera"
+  }
   ]
 
 };
